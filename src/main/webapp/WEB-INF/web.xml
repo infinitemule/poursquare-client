@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns="http://java.sun.com/xml/ns/javaee" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd"
+  version="3.0">
+
+
+  <session-config>
+    <tracking-mode>COOKIE</tracking-mode>
+  </session-config>
+
+  <context-param>
+     <param-name>spring.profiles.active</param-name>
+     <param-value>dev</param-value>
+     <!--<param-value>openshift</param-value>-->
+  </context-param>
+
+
+  <context-param>
+    <param-name>appRoot</param-name>
+    <param-value>/poursquare</param-value>
+  </context-param>
+
+  <context-param>  
+    <param-name>contextClass</param-name>
+    <param-value>
+      org.springframework.web.context.support.AnnotationConfigWebApplicationContext        
+    </param-value>
+  </context-param>
+
+  <context-param>
+    <param-name>contextConfigLocation</param-name>
+    <param-value>
+        com.infinitemule.hopperhack.poursquare.client.PoursquareCoreConfig
+    </param-value>
+  </context-param>
+
+
+  <listener>
+    <listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
+  </listener>
+  
+  <servlet>
+    <servlet-name>AppServlet</servlet-name>
+    <servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
+    <init-param>
+      <param-name>contextClass</param-name>
+      <param-value>
+        org.springframework.web.context.support.AnnotationConfigWebApplicationContext        
+      </param-value>
+    </init-param>
+    <init-param>
+      <param-name>contextConfigLocation</param-name>
+      <param-value>
+        com.infinitemule.hopperhack.poursquare.client.PoursquareClientConfig
+      </param-value>
+    </init-param>    
+
+    <load-on-startup>2</load-on-startup>
+  </servlet>
+
+  <servlet-mapping>
+    <servlet-name>AppServlet</servlet-name>
+    <url-pattern>/</url-pattern>
+  </servlet-mapping>
+
+
+</web-app>
