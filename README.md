@@ -37,15 +37,15 @@ you can call `mvn package` and copy the WAR out of the `target` directory
 Start your app server.  You'll also want to run the Storm topology so that it can populate Mongo.  
 Then you can point your browser here to see the most recent checkins:
 
-    http://http://localhost:8080/poursquare/latest
+    http://localhost:8080/poursquare/latest
     
 Also check out checkins by countries:
 
-    http://http://localhost:8080/poursquare/countries
+    http://localhost:8080/poursquare/countries
     
 And of course, the real time map:
 
-    http://http://localhost:8080/poursquare/map           
+    http://localhost:8080/poursquare/map           
 
 Notes
 -----
