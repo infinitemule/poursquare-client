@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <meta charset='utf-8' />
+    <meta http-equiv="X-UA-Compatible" content="chrome=1" />
+    <meta name="description" content="Poursquare - Client : Storm/Finagle Hackathon Submission" />
+
+    <link rel="stylesheet" type="text/css" media="screen" href="stylesheets/stylesheet.css">
+
+    <title>Poursquare - Client</title>
+  </head>
+
+  <body>
+
+    <!-- HEADER -->
+    <div id="header_wrap" class="outer">
+        <header class="inner">
+          <a id="forkme_banner" href="https://github.com/infinitemule/poursquare-client">View on GitHub</a>
+
+          <h1 id="project_title">Poursquare - Client</h1>
+          <h2 id="project_tagline">Storm/Finagle Hackathon Submission</h2>
+
+            <section id="downloads">
+              <a class="zip_download_link" href="https://github.com/infinitemule/poursquare-client/zipball/master">Download this project as a .zip file</a>
+              <a class="tar_download_link" href="https://github.com/infinitemule/poursquare-client/tarball/master">Download this project as a tar.gz file</a>
+            </section>
+        </header>
+    </div>
+
+    <!-- MAIN CONTENT -->
+    <div id="main_content_wrap" class="outer">
+      <section id="main_content" class="inner">
+        <h1>
+<a name="stormfinagle-hackathon-submission---poursquare-" class="anchor" href="#stormfinagle-hackathon-submission---poursquare-"><span class="octicon octicon-link"></span></a>Storm/Finagle Hackathon Submission - Poursquare </h1>
+
+<p>This was my submission to the Storm/Finagle Hackathon which took place at hack/reduce 
+in July of 2013.  </p>
+
+<p>This repo contains the code for the client portion of the application.  This includes the 
+web application that connects to a MongoDB database and a Spring MVC application that displays some 
+statistics and real time checkin map.</p>
+
+<h2>
+<a name="getting-started" class="anchor" href="#getting-started"><span class="octicon octicon-link"></span></a>Getting Started</h2>
+
+<h3>
+<a name="prerequisites" class="anchor" href="#prerequisites"><span class="octicon octicon-link"></span></a>Prerequisites</h3>
+
+<p>Install the <a href="http://www.oracle.com/technetwork/java/javase/downloads/index.html">Java SDK</a> 
+and <a href="http://maven.apache.org/download.cgi">Maven</a>.</p>
+
+<p>Install an application server.  I used <a href="http://tomcat.apache.org/">Tomcat</a> but Jetty or Glassfish or
+any servlet container will work just fine.</p>
+
+<p>Although I am using Scala, the libraries get bundled into the WAR file, you can deploy it 
+just as you would any other WAR file.</p>
+
+<h3>
+<a name="installing" class="anchor" href="#installing"><span class="octicon octicon-link"></span></a>Installing</h3>
+
+<p>First, clone the repo onto your local machine.</p>
+
+<p>Next, if you are using Eclipse, you can set up a Dynamic Web Project and have Eclipse automatically publish 
+to the server.  If you are using the command line, or just prefer to build a WAR and then deploy it yourself, 
+you can call <code>mvn package</code> and copy the WAR out of the <code>target</code> directory</p>
+
+<h3>
+<a name="running" class="anchor" href="#running"><span class="octicon octicon-link"></span></a>Running</h3>
+
+<p>Start your app server.  You'll also want to run the Storm topology so that it can populate Mongo.<br>
+Then you can point your browser here to see the most recent checkins:</p>
+
+<pre><code>http://localhost:8080/poursquare/latest
+</code></pre>
+
+<p>Also check out checkins by countries:</p>
+
+<pre><code>http://localhost:8080/poursquare/countries
+</code></pre>
+
+<p>And of course, the real time map:</p>
+
+<pre><code>http://localhost:8080/poursquare/map           
+</code></pre>
+
+<h2>
+<a name="notes" class="anchor" href="#notes"><span class="octicon octicon-link"></span></a>Notes</h2>
+
+<ul>
+<li>Implementing Spring MVC in Scala ain't pretty, but it works.  It was the fastest way for me to write 
+a small web app.  <a href="http://www.scalatra.org">Scalatra</a> might be have been a better fit here.</li>
+<li>I used the Java MongoDB driver and JSON queries.  Again, not pretty but it's simple and works just fine.  There is a Scala driver called <a href="http://api.mongodb.org/scala/casbah/2.0">Casbah</a> that may have been a better fit.</li>
+</ul>
+      </section>
+    </div>
+
+    <!-- FOOTER  -->
+    <div id="footer_wrap" class="outer">
+      <footer class="inner">
+        <p class="copyright">Poursquare - Client maintained by <a href="https://github.com/infinitemule">infinitemule</a></p>
+        <p>Published with <a href="http://pages.github.com">GitHub Pages</a></p>
+      </footer>
+    </div>
+
+    
+
+  </body>
+</html>
