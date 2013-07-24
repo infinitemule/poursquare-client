@@ -52,7 +52,7 @@ Notes
 
 * Implementing Spring MVC in Scala ain't pretty, but it works.  It was the fastest way for me to write 
 a small web app.  [Scalatra](http://www.scalatra.org) might be have been a better fit here.
-* I used the Java MongoDB driver and JSON queries.  Again, not pretty but it's simple and works just fine.  
-There is a Scala driver called [Casbah](http://api.mongodb.org/scala/casbah/2.0) that may have been a better fit.
+* I used the Java MongoDB driver and JSON queries.  Again, not pretty but it's simple and works 
+just fine.  There is a Scala driver called [Casbah](http://api.mongodb.org/scala/casbah/2.0) that may have been a better fit.
 
 
